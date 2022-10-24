@@ -13,13 +13,12 @@ public class Machine {
     }
 
     public Machine(String name, int wight) {
-        this.name = name;
+        this(name);
         this.wight = wight;
     }
 
     public Machine(String name, int wight, int power) {
-        this.name = name;
-        this.wight = wight;
+        this(name, wight);
         this.power = power;
     }
 }
