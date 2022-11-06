@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Vase {
     public String name;
     public ArrayList<Flower> flowers;
-    private int flowersLimit;
-    private int currentNumberOfFlowers;
+    public int currentNumberOfFlowers;
+    public int flowersLimit;
 
     public Vase(String name, int numOfFlowers) {
         this.name = name;
@@ -20,9 +20,10 @@ public class Vase {
             flowers.add(f);
         }
     }
-    public void showFlowers(){
-        for (Flower f:flowers){
-            System.out.println(f.getName()+" "+f.getColor());
+
+    public void showFlowers() {
+        for (Flower f : flowers) {
+            System.out.println(f.name + " " + f.color);
         }
     }
 }
