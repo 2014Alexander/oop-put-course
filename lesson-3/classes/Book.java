@@ -20,20 +20,19 @@ public class Book {
         authors.add(a);
     }
 
-    public void addGanre(String ganreName) {
-        Ganre g = new Ganre(ganreName);
+    public void addGanre(Ganre g) {
         ganres.add(g);
     }
 
     public String toString() {
-        StringBuilder outString = new StringBuilder("Book: " + title.toString() + ", " + year + "\n");
+        StringBuilder outString = new StringBuilder("Book: " + title + ", \nYear: " + year + "\n");
         outString.append("Authors:\n");
         for (Author a : authors) {
             outString.append(a).append("\n");
         }
         outString.append("Ganres:\n");
         for (Ganre g : ganres) {
-            outString.append(g.toString()).append("\n");
+            outString.append(g).append("\n");
         }
         return outString.toString();
     }

@@ -5,7 +5,7 @@ public class Author {
     private String surname;
 
     public String toString() {
-        return String.format(" Name: %s; surname: %s", name, surname);
+        return String.format(" Name: %s; Surname: %s", name, surname);
     }
 
     public Author(String name, String surname) {

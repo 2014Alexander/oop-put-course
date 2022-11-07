@@ -1,12 +1,6 @@
 package classes;
 
-public class Ganre {
-    private String nameOfGanre;
-
-    public Ganre(String nameOfGanre) {
-        this.nameOfGanre = nameOfGanre;
-    }
-    public String toString(){
-        return  " Ganre: "+nameOfGanre;
-    }
+public enum Ganre {
+    Classic, Comic, Detective, Mystery, Fantasy, Horror, Romance, Science_Fiction
 }
+
