@@ -9,6 +9,6 @@ public class Title {
 
     @Override
     public String toString() {
-        return "Title:\"" + title+"\"";
+        return "Title:\"" + title + "\"";
     }
 }

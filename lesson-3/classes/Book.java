@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Book {
     private int year;
     private ArrayList<Author> authors;
-    private ArrayList<Ganre> ganres;
+    private ArrayList<Genre> genres;
     private Title title;
 
     public Book(int year, String title) {
         this.year = year;
         this.title = new Title(title);
         authors = new ArrayList<>();
-        ganres = new ArrayList<>();
+        genres = new ArrayList<>();
     }
 
     public void addAuthor(String authorName, String authorSurname) {
@@ -20,8 +20,8 @@ public class Book {
         authors.add(a);
     }
 
-    public void addGanre(Ganre g) {
-        ganres.add(g);
+    public void addGenre(Genre g) {
+        genres.add(g);
     }
 
     public String toString() {
@@ -30,8 +30,8 @@ public class Book {
         for (Author a : authors) {
             outString.append(a).append("\n");
         }
-        outString.append("Ganres:\n");
-        for (Ganre g : ganres) {
+        outString.append("Genres:\n");
+        for (Genre g : genres) {
             outString.append(g).append("\n");
         }
         return outString.toString();
