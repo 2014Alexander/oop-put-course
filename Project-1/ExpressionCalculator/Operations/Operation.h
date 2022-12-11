@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include "../Expressions/Expression.h"
-#include "../Expressions/Constant.h"
+#include "Constant.h"
 
 using namespace std;
 

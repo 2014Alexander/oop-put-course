@@ -4,7 +4,7 @@
 
 #ifndef INHERITANCE00_NAME_H
 #define INHERITANCE00_NAME_H
-enum  Name {
-    add, minus, multiply, divide, constant, bracket_open, bracket_close
+enum Name {
+    constant, add, minus, multiply, divide, bracket_open, bracket_close
 };
 #endif //INHERITANCE00_NAME_H

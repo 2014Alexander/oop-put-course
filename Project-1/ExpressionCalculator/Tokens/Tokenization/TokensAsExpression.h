@@ -1,0 +1,14 @@
+//
+// Created by PC on 11.12.2022.
+//
+
+#ifndef INHERITANCE00_TOKENSASEXPRESSION_H
+#define INHERITANCE00_TOKENSASEXPRESSION_H
+
+
+class TokensAsExpression {
+
+};
+
+
+#endif //INHERITANCE00_TOKENSASEXPRESSION_H

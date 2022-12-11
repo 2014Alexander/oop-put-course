@@ -8,30 +8,19 @@
 
 #include <map>
 #include "../Others/Name.h"
+#include "../Others/Signs.h"
 
 using namespace std;
 
 class Token {
-private:
-    map<Name, string> signs;
 
-    void initSigns() {
-        signs[Name::add] = "+";
-        signs[Name::minus] = "-";
-        signs[Name::multiply] = "*";
-        signs[Name::divide] = "/";
-        signs[Name::constant] = "C";
-        signs[Name::bracket_open] = "(";
-        signs[Name::bracket_close] = ")";
-    }
 
 public:
     Token() {
-        initSigns();
     }
 
     string sign() {
-        return signs[name];
+        return Signs().signFromName(name);
     }
 
     Name name;
