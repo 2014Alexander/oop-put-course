@@ -8,6 +8,7 @@
 #include <bits/stdc++.h>
 #include "Token.h"
 #include "Tokenization/TokensIterator.h"
+#include "../Types/NamesAsType.h"
 
 using namespace std;
 
@@ -32,7 +33,8 @@ void Tokens::tokenize() {
     TokensIterator iterator = TokensIterator(sourceStr);
     Token *token;
     while ((token = iterator.nextToken()) != nullptr) {
-        cout << token->sign() << endl;
+        cout << NamesAsType(token->name).type() << endl;
+        elements.push_back(token);
     }
 
 }

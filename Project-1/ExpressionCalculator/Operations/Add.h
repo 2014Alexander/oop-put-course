@@ -11,7 +11,7 @@
 class Add : public Operation {
 public:
     Add(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name=Name::add;
+        name=Name::name_add;
     }
 
     double evaluate() {

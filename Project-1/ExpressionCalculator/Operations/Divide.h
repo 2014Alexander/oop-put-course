@@ -11,7 +11,7 @@
 class Divide : public Operation {
 public:
     Divide(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name = Name::divide;
+        name = Name::name_divide;
     }
 
     double evaluate() {

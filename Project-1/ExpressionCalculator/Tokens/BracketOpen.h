@@ -11,7 +11,7 @@
 class BracketOpen : public Token {
 public:
     BracketOpen() {
-        name = Name::bracket_open;
+        name = Name::name_bracket_open;
     }
 };
 

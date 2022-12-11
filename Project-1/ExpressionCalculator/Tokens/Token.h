@@ -7,8 +7,8 @@
 
 
 #include <map>
-#include "../Others/Name.h"
-#include "../Others/Signs.h"
+#include "../Types/Name.h"
+#include "../Types/Signs.h"
 
 using namespace std;
 

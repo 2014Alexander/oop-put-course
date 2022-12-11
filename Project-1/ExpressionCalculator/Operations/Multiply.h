@@ -9,7 +9,7 @@
 class Multiply : public Operation {
 public:
     Multiply(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name = Name::multiply;
+        name = Name::name_multiply;
     }
 
     double evaluate() {

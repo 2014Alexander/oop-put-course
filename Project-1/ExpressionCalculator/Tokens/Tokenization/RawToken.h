@@ -7,13 +7,15 @@
 
 
 #include <string>
-#include "../../Others/Name.h"
+#include "../../Types/Name.h"
 #include "../Token.h"
 
 using namespace std;
 
 class RawToken : public Token {
 public:
+    RawToken() {}
+
     string content;
 
     RawToken(const string &content, Name name) :

@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 #include "RawToken.h"
-#include "../../Others/Names.h"
+#include "../../Types/Names.h"
 
 class TokensIterator {
 public:

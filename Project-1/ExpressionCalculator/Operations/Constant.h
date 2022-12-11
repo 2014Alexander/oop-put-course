@@ -24,7 +24,7 @@ public:
 
 Constant::Constant(double value) {
     this->value = value;
-    name = Name::constant;
+    name = Name::name_constant;
 }
 
 
