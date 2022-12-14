@@ -9,6 +9,8 @@
 #include "Token.h"
 #include "Tokenization/TokensIterator.h"
 #include "../Types/NamesAsType.h"
+#include "../Types/Signs.h"
+#include "TokensVector/TokensVector.h"
 
 using namespace std;
 
@@ -16,9 +18,9 @@ class Tokens {
 public:
     Tokens(string source) : sourceStr(source) {}
 
-    vector<Token *> list() {
+     TokensVector list() {
         tokenize();
-        return elements;
+        return TokensVector(elements);
     }
 
 
@@ -33,7 +35,7 @@ void Tokens::tokenize() {
     TokensIterator iterator = TokensIterator(sourceStr);
     Token *token;
     while ((token = iterator.nextToken()) != nullptr) {
-        cout << NamesAsType(token->name).type() << endl;
+//        cout << token->sign() << endl;
         elements.push_back(token);
     }
 

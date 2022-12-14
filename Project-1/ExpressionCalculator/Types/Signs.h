@@ -28,12 +28,13 @@ string Signs::signFromName(Name name) {
     }
 }
 
-map<Name, string> Signs::signs = {{Name::name_add,          "+"},
-                                  {Name::name_minus,        "-"},
-                                  {Name::name_multiply,     "*"},
-                                  {Name::name_divide,       "/"},
-                                  {Name::name_constant,     "C"},
-                                  {Name::name_bracket_open, "("},
-                                  {Name::name_bracket_close, ")"}
+map<Name, string> Signs::signs = {{Name::name_add,                "+"},
+                                  {Name::name_minus,              "-"},
+                                  {Name::name_multiply,           "*"},
+                                  {Name::name_divide,             "/"},
+                                  {Name::name_constant,           "C"},
+                                  {Name::name_complex_expression, "E"},
+                                  {Name::name_bracket_open,       "("},
+                                  {Name::name_bracket_close,      ")"}
 };
 #endif //INHERITANCE00_SIGNS_H

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Operations/Operation.h"
-#include "Operations/Constant.h"
+#include "Expressions/Constant.h"
 #include "Operations/Add.h"
 #include "Operations/Minus.h"
 #include "Operations/Multiply.h"
@@ -16,6 +16,11 @@
 #include "Types/Names.h"
 #include "Expressions/TokensAsExpression.h"
 #include "Types/NamesAsType.h"
+#include "Tokens/CheckedTokensResults.h"
+#include "Expressions/ComplexExpression.h"
+#include "Tokens/TokensVector/TokensVector.h"
+#include "Operations/OperationPriority.h"
+#include "Operations/Operations.h"
 
 int main() {
     Expression *c1 = new Constant(5.2);
@@ -27,11 +32,26 @@ int main() {
 //    cout<<multi->signFromName();
     Token *t = d;
     vector<Token *> tokens1;
-    Tokens *tokens = new Tokens(" 12+3  *( 2+ 3   *4)");
-    vector<Token *> elements;
-    elements = tokens->list();
-    TokensAsExpression te = TokensAsExpression(elements);
-//    cout << Names().nameFromSign("/") << endl;
+//    Tokens *tokens = new Tokens(" 12+3  *( 2+ 3   *4)");
+    Tokens *tokens = new Tokens(" 12+3  * 2/3+ 3");
+    TokensVector elements = tokens->list();
+//    Expression *compExp = new ComplexExpression(&elements);
+//    compExp->evaluate();
+//    for (int i = 0; i < elements.size(); ++i) {
+//        Token *t = elements[i];
+//        cout << t->sign() << endl;
+//        if (t->type() == type_constant) {
+//            RawToken *rawConst = static_cast<RawToken *>(t);
+////            Constant *ce = static_cast<Constant *>(t);
+//            cout << rawConst->content << endl;
+//        }
+//    }
+    elements.toString();
+    Expression *complex = new ComplexExpression(elements);
+    double ev = complex->evaluate();
+    cout<<ev<<endl;
+//    TokensAsExpression te = TokensAsExpression(elements);
+    //    cout << Names().nameFromSign("/") << endl;
 //    TokensIterator *it = new TokensIterator("  12+3  *( 2+ 3   *4)");
 //    e = tokens.elements;
 //    e.push_back(c1);

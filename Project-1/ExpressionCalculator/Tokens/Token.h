@@ -9,6 +9,8 @@
 #include <map>
 #include "../Types/Name.h"
 #include "../Types/Signs.h"
+#include "../Types/Type.h"
+#include "../Types/NamesAsType.h"
 
 using namespace std;
 
@@ -21,6 +23,10 @@ public:
 
     string sign() {
         return Signs().signFromName(name);
+    }
+
+    Type type() {
+        return NamesAsType(name).type();
     }
 
     Name name;

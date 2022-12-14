@@ -39,6 +39,7 @@ map<string, Name> Names::names = {{"+", Name::name_add},
                                   {"*", Name::name_multiply},
                                   {"/", Name::name_divide},
                                   {"C", Name::name_constant},
+                                  {"E", Name::name_complex_expression},
                                   {"(", Name::name_bracket_open},
                                   {")", Name::name_bracket_close}
 };

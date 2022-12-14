@@ -43,6 +43,7 @@ Type NamesAsType::type() {
             break;
         case name_divide:
             result = type_operator;
+            break;
         default:
             throw invalid_argument(
                     "The name out of types"
