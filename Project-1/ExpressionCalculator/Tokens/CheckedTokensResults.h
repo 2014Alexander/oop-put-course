@@ -8,14 +8,16 @@ using namespace std;
 
 class CheckedTokensResults {
 public:
-    CheckedTokensResults(TokensVector t) : tokens(t) {}
+    CheckedTokensResults(TokensVector *tokens) {
+        this->tokens = tokens;
+    }
 
 public:
 
     bool correct();
 
 private:
-    TokensVector tokens;
+    TokensVector *tokens;
 
     bool correctSyntax();
 
@@ -29,8 +31,8 @@ private:
 bool CheckedTokensResults::correctSyntax() {
     bool result = true;
     Type shouldBeNext = type_constant;
-    for (int i = 0; i < tokens.tokensSize(); ++i) {
-        Token *t = tokens.elementByIndex(i);
+    for (int i = 0; i < tokens->size(); ++i) {
+        Token *t = tokens->elementByIndex(i);
         Type type = t->type();
         if (type != type_bracket) {
             if (type != shouldBeNext) {
@@ -51,8 +53,8 @@ bool CheckedTokensResults::correctSyntax() {
 bool CheckedTokensResults::correctBrackets() {
     int openedCount = 0;
     int closeCount = 0;
-    for (int i = 0; i < tokens.tokensSize(); ++i) {
-        Token *t = tokens.elementByIndex(i);
+    for (int i = 0; i < tokens->size(); ++i) {
+        Token *t = tokens->elementByIndex(i);
         Type type = t->type();
         if (type == type_bracket) {
             if (t->name == name_bracket_open) {
@@ -70,7 +72,9 @@ bool CheckedTokensResults::correctBrackets() {
 }
 
 bool CheckedTokensResults::correct() {
-    return correctSyntax() && correctBrackets();
+    bool correct = correctSyntax();
+    correct = correct && correctBrackets();
+    return correct;
 }
 
 

@@ -13,26 +13,26 @@ using namespace std;
 
 class ComplexExpression : public Expression {
 public:
-    ComplexExpression(TokensVector t) {
-        tokens = t;
+    ComplexExpression(TokensVector *tokens) {
+        this->tokens = tokens;
     }
 
     double evaluate() override;
 
+    Constant *asConstant();
+
 private:
 
-    TokensVector tokens;
+    TokensVector *tokens;
     Constant *resultConstant;
 
     void simplify();
 
     void simplifyOneStep();
 
-    void replaceRawConstantsToExpressions();
-
-    Expression *constantAsExpression(Token *);
 
     int topPriorityPosition();
+
 
     void replaceTokens(int index, Token *replaceTo);
 };
@@ -43,30 +43,29 @@ double ComplexExpression::evaluate() {
 }
 
 void ComplexExpression::simplify() {
-    replaceRawConstantsToExpressions();
-    while (tokens.tokensSize() > 1) {
+    while (tokens->size() > 1) {
         simplifyOneStep();
     }
-    Token *lastToken = tokens.elementByIndex(0);
+    Token *lastToken = tokens->elementByIndex(0);
     resultConstant = static_cast<Constant *>(lastToken);
 }
 
 void ComplexExpression::simplifyOneStep() {
     int topPriorityIndex = topPriorityPosition();
-    Token *priorityToken = tokens.elementByIndex(topPriorityIndex);
-    Token *arg1 = tokens.elementByIndex(topPriorityIndex - 1);
-    Token *arg2 = tokens.elementByIndex(topPriorityIndex + 1);
+    Token *priorityToken = tokens->elementByIndex(topPriorityIndex);
+    Token *arg1 = tokens->elementByIndex(topPriorityIndex - 1);
+    Token *arg2 = tokens->elementByIndex(topPriorityIndex + 1);
     Operation *op = Operations(priorityToken).newOperation(arg1, arg2);
     Constant *constant = new Constant(op->evaluate());
-    tokens.replaceOperationByConstant(constant, topPriorityIndex);
+    tokens->replaceOperationByConstant(constant, topPriorityIndex);
 //    tokens.toString();
 }
 
 int ComplexExpression::topPriorityPosition() {
     int topPos = -1;
     int topPriority = -1;
-    for (int i = 0; i < tokens.tokensSize(); ++i) {
-        Token *t = tokens.elementByIndex(i);
+    for (int i = 0; i < tokens->size(); ++i) {
+        Token *t = tokens->elementByIndex(i);
         Type type = t->type();
         if (type == type_operator) {
             int priority = OperationPriority(t->name).priority();
@@ -79,20 +78,10 @@ int ComplexExpression::topPriorityPosition() {
     return topPos;
 }
 
-void ComplexExpression::replaceRawConstantsToExpressions() {
-    for (int i = 0; i < tokens.tokensSize(); ++i) {
-        Token *token = tokens.elementByIndex(i);
-        Type type = token->type();
-        if (type == type_constant) {
-            tokens.replaceElementsBy(i, constantAsExpression(token));
-        }
-    }
-}
 
-Expression *ComplexExpression::constantAsExpression(Token *rawConstToken) {
-    RawToken *rawConst = static_cast<RawToken *>(rawConstToken);
-    double value = stoi(rawConst->content);
-    return new Constant(value);
+Constant *ComplexExpression::asConstant() {
+    simplify();
+    return resultConstant;
 }
 
 

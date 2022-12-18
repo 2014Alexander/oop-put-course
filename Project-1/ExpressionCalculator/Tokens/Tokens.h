@@ -18,9 +18,9 @@ class Tokens {
 public:
     Tokens(string source) : sourceStr(source) {}
 
-     TokensVector list() {
+     TokensVector *tokensVector() {
         tokenize();
-        return TokensVector(elements);
+        return new TokensVector(elements);
     }
 
 
