@@ -6,7 +6,8 @@
 #define INHERITANCE00_OPERATIONS_H
 
 
-#include "../Tokens/Token.h"
+
+#include "../Expressions/Expression.h"
 #include "Operation.h"
 #include "Add.h"
 #include "Minus.h"

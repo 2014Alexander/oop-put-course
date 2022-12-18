@@ -5,6 +5,7 @@
 #ifndef INHERITANCE00_EXPRESSIONCALCULATOR_H
 #define INHERITANCE00_EXPRESSIONCALCULATOR_H
 
+
 #include "../Tokens/Tokens.h"
 #include "TokensAsExpression.h"
 

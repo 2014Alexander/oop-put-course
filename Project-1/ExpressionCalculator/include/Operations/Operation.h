@@ -7,9 +7,8 @@
 
 
 #include <iostream>
-#include "../Expressions/Expression.h"
-#include "../Expressions/Constant.h"
 #include "OperationPriority.h"
+#include "../Expressions/Expression.h"
 
 using namespace std;
 
