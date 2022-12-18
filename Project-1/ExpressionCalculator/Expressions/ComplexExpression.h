@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Expression.h"
 #include "../Operations/Operations.h"
+#include "../Tokens/TokensVector/TokensVector.h"
 
 using namespace std;
 
@@ -34,7 +35,6 @@ private:
     int topPriorityPosition();
 
 
-    void replaceTokens(int index, Token *replaceTo);
 };
 
 double ComplexExpression::evaluate() {

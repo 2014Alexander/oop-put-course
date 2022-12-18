@@ -10,6 +10,7 @@
 #include "../Tokens/CheckedTokensResults.h"
 #include "ComplexExpression.h"
 #include "NestedBrackets.h"
+#include "../Tokens/Tokenization/RawToken.h"
 
 using namespace std;
 

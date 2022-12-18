@@ -4,6 +4,9 @@
 
 #ifndef INHERITANCE00_CHECKEDTOKENSRESULTS_H
 #define INHERITANCE00_CHECKEDTOKENSRESULTS_H
+
+#include "TokensVector/TokensVector.h"
+
 using namespace std;
 
 class CheckedTokensResults {
