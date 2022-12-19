@@ -6,15 +6,13 @@
 #define INHERITANCE00_MULTIPLY_H
 
 
+#include "Operation.h"
+
 class Multiply : public Operation {
 public:
-    Multiply(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name = Name::name_multiply;
-    }
+    Multiply(Expression *arg1, Expression *arg2);
 
-    double evaluate() {
-        return arg1->evaluate() * arg2->evaluate();
-    }
+    double evaluate();
 };
 
 

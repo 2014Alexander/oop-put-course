@@ -18,8 +18,7 @@ class Token {
 
 
 public:
-    Token() {
-    }
+    Token(){};
 
     string sign() {
         return Signs().signFromName(name);

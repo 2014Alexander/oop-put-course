@@ -9,13 +9,9 @@
 
 class Minus : public Operation {
 public:
-    Minus(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name = Name::name_minus;
-    }
+    Minus(Expression *arg1, Expression *arg2);
 
-    double evaluate() {
-        return arg1->evaluate() - arg2->evaluate();
-    }
+    double evaluate();
 };
 
 

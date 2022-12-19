@@ -10,13 +10,9 @@
 
 class Divide : public Operation {
 public:
-    Divide(Expression *arg1, Expression *arg2) : Operation(arg1, arg2) {
-        name = Name::name_divide;
-    }
+    Divide(Expression *arg1, Expression *arg2);
 
-    double evaluate() {
-        return arg1->evaluate() / arg2->evaluate();
-    }
+    double evaluate();
 };
 
 

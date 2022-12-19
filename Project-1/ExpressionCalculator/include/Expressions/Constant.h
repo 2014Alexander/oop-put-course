@@ -17,15 +17,8 @@ private:
 public:
     Constant(double value);
 
-    double evaluate() {
-        return value;
-    }
+    double evaluate();
 };
-
-Constant::Constant(double value) {
-    this->value = value;
-    name = Name::name_constant;
-}
 
 
 #endif //INHERITANCE00_CONSTANT_H

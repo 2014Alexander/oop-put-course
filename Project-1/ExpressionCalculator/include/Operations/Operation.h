@@ -15,10 +15,7 @@ using namespace std;
 class Operation : public Expression {
 public:
 
-    Operation(Expression *arg1, Expression *arg2) {
-        this->arg1 = arg1;
-        this->arg2 = arg2;
-    }
+    Operation(Expression *arg1, Expression *arg2);
 
     Expression *arg1, *arg2;
 };

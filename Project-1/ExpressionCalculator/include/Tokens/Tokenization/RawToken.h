@@ -18,10 +18,7 @@ public:
 
     string content;
 
-    RawToken(const string &content, Name name) :
-            content(content) {
-        this->name = name;
-    }
+    RawToken(const string &content, Name name);
 };
 
 

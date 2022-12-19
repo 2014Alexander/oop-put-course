@@ -10,9 +10,7 @@
 
 class BracketClose : public Token {
 public:
-    BracketClose() {
-        name = Name::name_bracket_close;
-    }
+    BracketClose();
 };
 
 

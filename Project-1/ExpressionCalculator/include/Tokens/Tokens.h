@@ -16,12 +16,9 @@ using namespace std;
 
 class Tokens {
 public:
-    Tokens(string source) : sourceStr(source) {}
+    Tokens(string source);
 
-     TokensVector *tokensVector() {
-        tokenize();
-        return new TokensVector(elements);
-    }
+    TokensVector *tokensVector();
 
 
 private:
@@ -30,16 +27,6 @@ private:
 
     void tokenize();
 };
-
-void Tokens::tokenize() {
-    TokensIterator iterator = TokensIterator(sourceStr);
-    Token *token;
-    while ((token = iterator.nextToken()) != nullptr) {
-//        cout << token->sign() << endl;
-        elements.push_back(token);
-    }
-
-}
 
 
 #endif //INHERITANCE00_TOKENS_H

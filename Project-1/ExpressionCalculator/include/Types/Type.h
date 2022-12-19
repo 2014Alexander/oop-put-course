@@ -5,7 +5,6 @@
 #ifndef INHERITANCE00_TYPE_H
 #define INHERITANCE00_TYPE_H
 
-
 enum Type {
     type_constant, type_operator, type_bracket
 };
